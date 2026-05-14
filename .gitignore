@@ -1,0 +1,7 @@
+data/raw/
+data/processed/
+__pycache__/
+*.bam
+*.pod5
+*.h5
+*.tar.gz
