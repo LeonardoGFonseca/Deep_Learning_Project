@@ -163,7 +163,9 @@ def main():
     # Triggering Sweep script
     sweep_script = PROJECT_ROOT / "src" / "scripts" / "sweep_h5.py"
     if sweep_script.exists():
-        subprocess.run(["python", str(sweep_script), "--h5_path", str(MASTER_H5)])
+        env = os.environ.copy()
+        env["PYTHONPATH"] = str(PROJECT_ROOT)
+        subprocess.run(["python", str(sweep_script), "--h5_path", str(MASTER_H5)], env=env)
     else:
         print("[-] Sweep script not found.")
 
