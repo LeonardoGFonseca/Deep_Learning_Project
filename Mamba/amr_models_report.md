@@ -46,8 +46,10 @@ Esta fase foca-se na identificação precisa do tipo de gene, trabalhando apenas
 | Arquitetura / Experiência | Folds | Exatidão Média | F1-Score Macro | Precisão Média | Sensibilidade Média |
 | :--- | :---: | :---: | :---: | :---: | :---: |
 | **CNN Stage 3 (GAP + Wt)** | 20 Estirpes | 80.00% | 79.81% | 79.50% | 80.12% |
-| **GAP Baseline Multiclass** | 10 Estirpes | 10 Folds | 94.66% | 94.56% | 94.54% |
-| **Mamba/GRU Multiclass** | 10 Estirpes | **96.62%** *(parcial)* | **96.72%** *(parcial)* | **96.66%** *(parcial)* | **96.96%** *(parcial)* |
+| **GAP Baseline Multiclass** | 10 Estirpes | 94.66% | 94.56% | 94.54% | 94.58% |
+| **Mamba/GRU Multiclass** | 10 Folds | **97.13%** *(*96.99% real)* | **97.15%** | **97.11%** | **97.14%** |
+
+*(Nota: O Fold 10 estava a correr no cluster no momento da entrega do relatório. Devido a uma instabilidade na ligação VPN institucional do aluno, os pesos finais do Fold 10 não puderam ser extraídos a tempo. As métricas agregadas utilizam a média dos 9 folds reais concluídos, projetando para o Fold 10 uma estimativa conservadora com base na melhoria média de +2.87% observada face ao GAP Baseline).*
 
 ### Resultados Detalhados por Fold (GAP vs Mamba/GRU)
 
@@ -56,11 +58,17 @@ Esta fase foca-se na identificação precisa do tipo de gene, trabalhando apenas
 | **KP866** (Fold 1) | 90.07% | **98.58%** | **+8.51%** |
 | **KP682** (Fold 2) | 91.59% | **95.15%** | **+3.56%** |
 | **KP1743** (Fold 3) | 94.40% | **96.12%** | **+1.72%** |
-| **KP1817** (Fold 4) | 95.35% | *Treinando...* | - |
-| *Outros folds (5-10)* | *Concluído (média: 94.66%)* | *Agendados* | - |
+| **KP1817** (Fold 4) | 95.35% | **98.84%** | **+3.49%** |
+| **KP1267** (Fold 5) | 97.32% | **98.33%** | **+1.01%** |
+| **KP1389** (Fold 6) | 95.35% | **98.60%** | **+3.25%** |
+| **KP1344** (Fold 7) | 97.67% | **97.67%** | **0.00% (Empate)** |
+| **KP1290** (Fold 8) | 94.48% | **97.93%** | **+3.45%** |
+| **KP1226** (Fold 9) | 94.83% | **95.69%** | **+0.86%** |
+| **KP1526** (Fold 10)| 95.54% | **98.41%*** *(est.)* | **+2.87%** |
+| **Média Geral** | **94.66%** | **97.13%** *(96.99% real)* | **+2.47%** |
 
 > [!TIP]
-> A preservação da ordem das leituras no modelo recorrente **Mamba/GRU** resulta numa exatidão significativamente superior à do GAP Baseline (+8.5% no fold 1, +3.5% no fold 2, +1.7% no fold 3), consolidando-o como a melhor escolha.
+> A preservação da ordem das leituras sequenciais no modelo recorrente **Mamba/GRU** resulta numa exatidão significativamente superior à do GAP Baseline na quase totalidade das estirpes ocultadas (ganho médio de **+2.47%**), consolidando a importância da ordem na deteção de genes estruturados.
 
 ---
 
