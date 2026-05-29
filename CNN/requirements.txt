@@ -1,0 +1,15 @@
+# Tensor Library requirements.
+torch>=2.0.0
+numpy>=1.24.0
+
+## Technical Tools & Libraries (The Workbench)
+matplotlib>=3.7.0
+scipy
+pandas
+pyslow5
+
+## Nanopore Signaling
+ont-fast5-api
+pod5
+## Dorado basecaller. 
+Dorado>=1.4.0

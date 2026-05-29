@@ -1,0 +1,7 @@
+*.pod5
+.temp*
+# Ignorar archivos de salida de Dorado
+bin
+data/processed/*/aligned_reads.sam
+data/processed/*/aligned_reads.bam
+data/processed/*/aligned_reads.bam.bai

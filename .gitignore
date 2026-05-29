@@ -5,3 +5,8 @@ __pycache__/
 *.pod5
 *.h5
 *.tar.gz
+**/deep_env/
+**/remote-kernel/
+**/pipeline_logs/
+**/data/
+**/.DS_Store

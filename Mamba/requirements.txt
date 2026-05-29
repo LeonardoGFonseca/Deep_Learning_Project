@@ -1,0 +1,11 @@
+requests>=2.28,<3
+pod5>=0.3,<1
+numpy>=2,<3
+tqdm>=4,<5
+h5py>=3,<4
+pysam>=0.22,<1
+matplotlib>=3,<4
+seaborn>=0.12,<1
+torch>=2,<3
+scikit-learn>=1,<2
+# Optional: pip install mamba-ssm causal-conv1d (Linux only, CUDA)

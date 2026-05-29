@@ -1,0 +1,9 @@
+# Binary data files — never diff or text-convert
+*.pod5 binary
+*.bam binary
+*.bam.bai binary
+*.fast5 binary
+*.fasta text
+*.tar.gz binary
+*.h5 binary
+*.png binary

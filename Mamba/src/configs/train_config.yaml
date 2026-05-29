@@ -1,0 +1,33 @@
+model:
+  backbone: CNNStem
+  in_channels: 1
+  d_model: 256
+  dropout: 0.2
+
+heads:
+  gap:
+    type: GapBaseline
+    pool: AdaptiveAvgPool1d
+    classifier: Linear(256 -> 1)
+
+  mamba:
+    type: MambaClassifier
+    d_state: 16
+    expand_factor: 2
+    fallback: GRU(input=256, hidden=256)
+
+training:
+  loss: BCEWithLogitsLoss
+  optimizer: AdamW
+  learning_rate: 0.0003
+  weight_decay: 0.0001
+  scheduler: CosineAnnealingLR
+  max_epochs: 50
+  early_stop_patience: 10
+  batch_size: 32
+  balance: 50/50 undersample
+
+evaluation:
+  cv: LOSO
+  strains: [KP1779, KP1780, KP1526, KP1833]
+  metrics: [accuracy, f1, precision, recall, auprc]

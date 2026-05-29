@@ -1,0 +1,15 @@
+src/bin/*
+*.pod5
+*.bam*
+deep_env
+data/raw/*
+data/processed/alignments/*
+data/processed/hd5f/*.h5
+.temp*
+.download_complete
+bin
+graphify*
+.python-version
+cuda-*
+src/training/__pycache__/
+pipeline_logs/*
